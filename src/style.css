@@ -37,12 +37,43 @@ body {
   font-weight: bold;
 }
 
-.item-img {
-  max-height: 100px;
-  width: 170px;
+.item-image {
+  max-height: 120px;
+  width: 180px;
 }
 
 .tile:hover {
   background-color: #f7f7f7;
   cursor: pointer;
+}
+
+.flex-container {
+  display: flex;
+  background-color: DodgerBlue;
+}
+
+.item-details {
+  flex-basis: 100%;
+  text-align: left !important;
+  padding-left: 10px;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+.flex-container-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.perfect-centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

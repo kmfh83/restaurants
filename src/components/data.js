@@ -2,7 +2,7 @@ const items =[ {
             id: 1,
             title: 'Egg Sandwitch',
             price: 180,
-            description: 'Sweet, tender crabmeat in our creamy garlic Parmesan sauce served over linguini.',
+            description: 'Sweet, tender crabmeat in our creamy garlic Parmesan sauce served over linguini garlic Parmesan sauce served over linguini garlic Parmesan sauce served over linguini.',
             image: require('./img/sandwitch.jpg')
 
 
