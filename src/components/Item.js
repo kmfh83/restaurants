@@ -10,16 +10,16 @@ class Item extends Component {
 
         {items.map((item)=>
 
-        <div className="flex-container item-border-3px">
+        <div className="flex-container perfect-centering item-border-3px">
           <div className="perfect-centering">
             <ImageParallax image={item.image} title={item.title}/>
           </div>
-          <div className="flex-container-col item-details">
+          <div className="flex-container-col item-details border-line-3px ">
             <div className="font-title">{item.title}</div>
             <div className="font-description">{item.description}</div>
             <div className="font-price">{item.price}</div>
           </div>
-          <button className="btn btn-circle perfect-centering font-description">add/edit</button>
+          <button className="btn btn-lg btn-add-edit perfect-centering font-description">add/edit</button>
         </div>
 
       )}

@@ -83,9 +83,11 @@ body {
    margin: 5px;
 }
 
-.description-border-3px {
-  border-left: 3px solid #f1f1f1;
+.border-line-3px {
+  /*border-left: 3px solid #f1f1f1;*/
   border-right: 3px solid #f1f1f1;
+  padding-left: 3px;
+  padding-right: 4px;
 }
 
 .font-price {
@@ -99,4 +101,8 @@ body {
 
 .font-description {
   font-size: 26px;
+}
+
+.btn-add-edit {
+  margin-right: 10px;
 }
