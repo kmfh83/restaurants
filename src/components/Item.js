@@ -13,7 +13,7 @@ class Item extends Component {
         <div className="flex-container">
           <div className="perfect-centering">img</div>
           <div className="flex-container-col item-details">
-            <div>title</div>
+            <div>title!</div>
             <div>des</div>
             <div>price</div>
           </div>
