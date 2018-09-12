@@ -11,8 +11,8 @@ class ImageParallax extends Component {
         <div className="parallax-bottom-left" tabIndex="3"></div>
         <div className="parallax-bottom-right" tabIndex="4"></div>
         <div className="parallax-content">
-          <div className="parallax-back padd-5">
-            <img src={this.props.image} className="img-responsive rounded item-image" alt={this.props.title}/>
+          <div className="parallax-back padd-10">
+            <img src={this.props.image} className="item-image" alt={this.props.title}/>
           </div>
         </div>
       </div>
