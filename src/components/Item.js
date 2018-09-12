@@ -10,7 +10,7 @@ class Item extends Component {
 
 
 
-        <div className="flex-container">
+        {/* <div className="flex-container">
           <div className="perfect-centering">img</div>
           <div className="flex-container-col item-details">
             <div>title</div>
@@ -18,32 +18,37 @@ class Item extends Component {
             <div>price</div>
           </div>
           <div className="perfect-centering">add/edit</div>
-        </div>
+        </div> */}
 
-        {/* {items.map((item)=>
+        {items.map((item)=>
+
           <div className="mtam" key={item.id}>
-            <div className="mtam-icon">
-              <div className="example-mtam-icon">
-                <ImageParallax image={item.image} title={item.title} />
+          <div className="flex-container">
+            <div className="perfect-centering">
+              <div className="mtam-icon">
+                <div className="example-mtam-icon">
+                  <ImageParallax image={item.image} title={item.title} />
+                </div>
               </div>
             </div>
-            <div className="mtam-content">
+            <div className="flex-container-col item-details">
               <div className="mtam-title padding-top-3">{item.title}</div>
-              <div className="mtam-subtitle text-gray ptb-5">
-                {item.description}</div>
-                <div className="">
-                  <span className="">
-                    {item.price} S.R.
-                  </span>
-                </div>
-            </div>
-            <div className="">
+              <div className="mtam-subtitle text-gray ptb-5">{item.description}</div>
               <span className="">
-                ADD/EDIT
+                {item.price} S.R.
               </span>
             </div>
+            <div className="perfect-centering">
+              <div className="">
+                <span className="">
+                  ADD/EDIT
+                </span>
+              </div>
+            </div>
           </div>
-        )} */}
+
+          </div>
+        )}
       </div>
     )
   }
