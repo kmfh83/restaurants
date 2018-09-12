@@ -4,6 +4,11 @@ body {
   font-family: sans-serif;
 }
 
+h2 {
+  font-size: 1.2rem;
+  margin: 0 !important;
+}
+
 .App {
   /* text-align: center; */
 }
@@ -37,6 +42,10 @@ body {
   font-weight: bold;
 }
 
+.item-title {
+  padding-top: 10px;
+}
+
 .item-image {
   max-height: 120px;
   width: 180px;
@@ -55,16 +64,14 @@ body {
 .item-details {
   flex-basis: 100%;
   text-align: left !important;
-  padding-left: 10px;
+  margin-left: 10px;
 }
 
 .flex-container > div {
-  /*background-color: #f1f1f1;*/
+  /* background-color: #f1f1f1; */
   width: auto;
-  margin: 10px;
   text-align: center;
-  line-height: 50px;
-  /*font-size: 30px;*/
+  line-height: 1.4rem;
 }
 
 .flex-container-col {
@@ -79,7 +86,7 @@ body {
 }
 
 .item-border-3px {
-   border: 3px solid #f1f1f1;
+   border: 2px solid #f1f1f1;
    margin: 5px;
 }
 
@@ -92,15 +99,19 @@ body {
 
 .font-price {
   color: red;
-  font-size: 26px;
+  font-size: .84rem;
+  font-weight: bold;
+  margin-top: 5px;
 }
 
 .font-title {
   font-size: 30px;
+  color: black;
 }
 
 .font-description {
-  font-size: 26px;
+  font-size: .82rem;
+  color: grey;
 }
 
 .btn-add-edit {
