@@ -22,6 +22,22 @@ const items =[ {
             description: 'Occasionally, this may mean some items listed here are temporarily.',
             image: require('./img/sandwitch.jpg')
 
+          },
+          {
+            id: 4,
+            title: 'Mslooq Sandwitch',
+            price: 5.50,
+            description: 'Two southern fried chicken strips on honey mustard-dressed lettuce leaves with celery sticks and a pot of Red French dressing',
+            image: require('./img/sandwitch.jpg')
+
+          },
+          {
+            id: 5,
+            title: 'Mqlql Sandwitch',
+            price: 7.20,
+            description: 'Crispy coated chicken strips, baby gem lettuce, Grana Padano and Caesar dressing in a flour tortilla.',
+            image: require('./img/sandwitch.jpg')
+
           }]
 
 export default items;

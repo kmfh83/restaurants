@@ -8,20 +8,23 @@ class Item extends Component {
 
       <div className="">
 
-
-
-        {/* <div className="flex-container">
-          <div className="perfect-centering">img</div>
-          <div className="flex-container-col item-details">
-            <div>title</div>
-            <div>des</div>
-            <div>price</div>
-          </div>
-          <div className="perfect-centering">add/edit</div>
-        </div> */}
-
         {items.map((item)=>
 
+        <div className="flex-container perfect-centering item-border-3px">
+          <div className="perfect-centering">
+            <ImageParallax image={item.image} title={item.title}/>
+          </div>
+          <div className="flex-container-col item-details border-line-3px ">
+            <div className="font-title">{item.title}</div>
+            <div className="font-description">{item.description}</div>
+            <div className="font-price">{item.price}</div>
+          </div>
+          <button className="btn btn-lg btn-add-edit perfect-centering font-description">add/edit</button>
+        </div>
+
+      )}
+
+        {/* {items.map((item)=>
           <div className="mtam" key={item.id}>
           <div className="flex-container">
             <div className="perfect-centering">
