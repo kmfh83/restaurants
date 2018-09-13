@@ -5,7 +5,7 @@ body {
 }
 
 h2 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin: 0 !important;
 }
 
@@ -64,7 +64,7 @@ h2 {
 .item-details {
   flex-basis: 100%;
   text-align: left !important;
-  margin-left: 10px;
+  margin: 0 10px 0 10px;
 }
 
 .flex-container > div {
@@ -85,21 +85,17 @@ h2 {
   align-items: center;
 }
 
-.item-border-3px {
-   border: 2px solid #f1f1f1;
-   margin: 5px;
+.item-row {
+
 }
 
-.border-line-3px {
-  /*border-left: 3px solid #f1f1f1;*/
-  border-right: 3px solid #f1f1f1;
-  padding-left: 3px;
-  padding-right: 4px;
+.item-row:hover {
+  background-color: #f7f7f7;
 }
 
 .font-price {
   color: red;
-  font-size: .84rem;
+  font-size: .75rem;
   font-weight: bold;
   margin-top: 5px;
 }
@@ -116,4 +112,79 @@ h2 {
 
 .btn-add-edit {
   margin-right: 10px;
+}
+
+
+
+.box h3{
+  text-align:center;
+	position:relative;
+	top:80px;
+}
+.box {
+	width:70%;
+	height:200px;
+	background:#FFF;
+	margin:40px auto;
+  border: 1px solid #fff;
+}
+/*==================================================
+ * Effect 6
+ * ===============================================*/
+.effect6
+{
+  	position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.effect6:before, .effect6:after
+{
+	content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    top:50%;
+    bottom:0;
+    left:10px;
+    right:10px;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+.effect6:after
+{
+	right:10px;
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg);
+       -moz-transform:skew(8deg) rotate(3deg);
+        -ms-transform:skew(8deg) rotate(3deg);
+         -o-transform:skew(8deg) rotate(3deg);
+            transform:skew(8deg) rotate(3deg);
+}
+
+
+.modal-title {
+  font-size: 1rem;
+}
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;
+}
+
+:-ms-input-placeholder {
+   text-align: center;
+}
+
+input {
+    text-align: center; 
 }

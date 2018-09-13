@@ -1,66 +1,130 @@
 import React, { Component } from 'react';
 import items from './data';
-import ImageParallax from './ImageParallax';
+import ItemModal from './ItemModal';
 
 class Item extends Component {
-  render() {
-    return (
 
-      <div className="">
+  state = {
+    modalState: '',
+    addedItems: 0,
+    currentItemOption: []
+  }
 
-        {items.map((item)=>
+  handleAddITem = (item) => {
+    console.log('item.options', item.options);
+    this.setState({ modalState: 'active', currentItemOption: item.options })
+}
 
-          <div className="flex-container perfect-centering item-border-3px">
-            <div className="perfect-centering">
-              <img src={item.image} className="item-image" alt={item.title}/>
+closeModal = () => {
+  // this.setState({ modalState: '' });
+  this.setState({ modalState: '' });
+}
 
-              {/* <ImageParallax image={item.image} title={item.title}/> */}
-            </div>
-            <div className="flex-container-col item-details border-line-3px ">
-              <h2 class="item-title">{item.title}</h2>
-              <div className="font-description">{item.description}</div>
-              <div className="font-price">{item.price} S.R.</div>
-            </div>
+changeQuantity = (option) => {
+  this.setState((prevState) => {
+    let newCount = 0
+    if (option === 'add') {
+      newCount = prevState.addedItems + 1;
+    }
+    if (option === 'remove' && prevState.addedItems > 0) {
+      newCount = prevState.addedItems - 1;
+    }
+    return ({ addedItems: newCount });
+  }
+);
+}
 
-            <div className="perfect-centering">
-              <button className="btn btn-lg btn-add-edit perfect-centering font-description">add/edit</button>
-            </div>
+render() {
+  const { modalState, addedItems, currentItemOption } = this.state;
 
-          </div>
+  return (
 
-        )}
+    <div>
 
-        {/* {items.map((item)=>
-          <div className="mtam" key={item.id}>
-          <div className="flex-container">
+      {items.map((item) =>
+        <div key={item.id} className="flex-container perfect-centering item-row box effect6">
           <div className="perfect-centering">
-          <div className="mtam-icon">
-          <div className="example-mtam-icon">
-          <ImageParallax image={item.image} title={item.title} />
+            <img src={item.image} className="item-image" alt={item.title}/>
+          </div>
+          <div className="flex-container-col item-details border-line-3px ">
+            <h2>{item.title}</h2>
+            <div className="font-description">{item.description}</div>
+            <div className="font-price">{item.price}</div>
+          </div>
+          <button
+            className="btn btn-lg btn-add-edit perfect-centering font-description"
+            onClick={() => this.handleAddITem(item)}
+            >add</button>
+
+            <div className={`modal ${modalState}`} id="modal-id">
+              <a href="#close" className="modal-overlay" aria-label="Close"></a>
+              <div className="modal-container">
+
+                <div className="modal-header">
+                  <a href="#close" className="btn btn-clear float-right" aria-label="Close" onClick={this.closeModal}></a>
+
+                  <span className="modal-title">Modal title</span>
+                  <div style={{display:'inline'}}>
+
+                    <button
+                      className="btn btn-xs btn-add-add"
+                      onClick={() => this.changeQuantity("remove")}>
+                      <i className="icon icon-minus"></i>
+                    </button>
+                    <input
+                      value={addedItems}
+                      style={{width:'40px', display:'inline'}}
+                      className="form-input"
+                      type="text"
+                      placeholder="0"/>
+                      <button
+                        className="btn btn-xs btn-add-add"
+                        onClick={() => this.changeQuantity("add")}>
+                        <i className="icon icon-plus"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="modal-body">
+                    <div className="content">
+                      <form>
+                        <div className="form-group">
+                          <div className="columns">
+
+                            {
+                              for (var i = 0; i < addedItems; i++) {
+                                array[i]
+                              currentItemOption.map(option =>
+                              <div className="column">
+                                <label className="form-checkbox"> {option}
+                                  <input type="checkbox"/>
+                                  <i className="form-icon"></i>
+                                </label>
+                              </div>
+                            )}
+                          }
+
+
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+                  <div className="modal-footer">
+                    ...
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          )}
+
+
+
         </div>
-      </div>
-    </div>
-    <div className="flex-container-col item-details">
-    <div className="mtam-title padding-top-3">{item.title}</div>
-    <div className="mtam-subtitle text-gray ptb-5">{item.description}</div>
-    <span className="">
-    {item.price} S.R.
-  </span>
-</div>
-<div className="perfect-centering">
-<div className="">
-<span className="">
-ADD/EDIT
-</span>
-</div>
-</div>
-</div>
+      )
+    }
+  }
 
-</div>
-)} */}
-</div>
-)
-}
-}
-
-export default Item;
+  export default Item;
