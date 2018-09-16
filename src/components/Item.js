@@ -11,27 +11,50 @@ class Item extends Component {
   }
 
   handleAddITem = (item) => {
-    console.log('item.options', item.options);
     this.setState({ modalState: 'active', currentItemOption: item.options })
-}
-
-closeModal = () => {
-  // this.setState({ modalState: '' });
-  this.setState({ modalState: '' });
-}
-
-changeQuantity = (option) => {
-  this.setState((prevState) => {
-    let newCount = 0
-    if (option === 'add') {
-      newCount = prevState.addedItems + 1;
-    }
-    if (option === 'remove' && prevState.addedItems > 0) {
-      newCount = prevState.addedItems - 1;
-    }
-    return ({ addedItems: newCount });
   }
-);
+
+  closeModal = () => {
+    // this.setState({ modalState: '' });
+    this.setState({ modalState: '' });
+  }
+
+  changeQuantity = (option) => {
+    this.setState((prevState) => {
+      let newCount = 0
+      if (option === 'add') {
+        newCount = prevState.addedItems + 1;
+      }
+      if (option === 'remove' && prevState.addedItems > 0) {
+        newCount = prevState.addedItems - 1;
+      }
+      return ({ addedItems: newCount });
+    }
+  );
+}
+
+
+itemCountRows (itemsCount) {
+  const { currentItemOption } = this.state;
+  let rows = [];
+
+  for (var i = 0; i < itemsCount; i++) {
+    rows.push((<tr className="active">
+      {currentItemOption.map(option =>
+        <td key={option}>
+          <input type="checkbox"/>
+          <i className="form-icon"></i>
+        </td>
+      ).concat(<th>X</th>)}
+    </tr>))
+
+  }
+  return rows
+
+}
+
+updateQuanitity (e) {
+  this.setState({ addedItems: parseInt(e.target.value, 10)})
 }
 
 render() {
@@ -76,7 +99,9 @@ render() {
                       style={{width:'40px', display:'inline'}}
                       className="form-input"
                       type="text"
-                      placeholder="0"/>
+                      placeholder="0"
+                      onChange={e => this.updateQuanitity(e)}
+                      />
                       <button
                         className="btn btn-xs btn-add-add"
                         onClick={() => this.changeQuantity("add")}>
@@ -91,20 +116,18 @@ render() {
                         <div className="form-group">
                           <div className="columns">
 
-                            {
-                              for (var i = 0; i < addedItems; i++) {
-                                array[i]
-                              currentItemOption.map(option =>
-                              <div className="column">
-                                <label className="form-checkbox"> {option}
-                                  <input type="checkbox"/>
-                                  <i className="form-icon"></i>
-                                </label>
-                              </div>
-                            )}
-                          }
+                            <table className="table table-striped table-hover">
+                              <thead>
+                                <tr>
+                                  {currentItemOption.map(option => <th key={option}>{option}</th>)}
+                                </tr>
+                              </thead>
+                              <tbody>
 
+                                {this.itemCountRows(addedItems)}
 
+                              </tbody>
+                            </table>
                           </div>
                         </div>
                       </form>
