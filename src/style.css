@@ -185,10 +185,12 @@ input {
   margin-bottom: 25px;
 }
 
-.navbar navbar-section {
-  align-self: center;
+.navbar .navbar-section {
+  width: 10px;
+  justify-content: center;
 }
 
-.navbar-section {
-  align-items: center;
+.navbar .navbar-section a{
+  color: #f3f3f3;
+
 }

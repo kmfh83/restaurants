@@ -9,8 +9,9 @@ class App extends Component {
         <header className="navbar">
 
           <section className="navbar-section">
-            <a href="/" className="btn btn-link">Twitter</a>
-            <a href="/" className="btn btn-link">GitHub</a>
+            <a href="/" className="btn btn-link">Home</a>
+            <a href="/" className="btn btn-link">Login</a>
+            <a href="/" className="btn btn-link">About</a>
           </section>
 
         </header>
