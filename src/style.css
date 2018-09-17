@@ -29,26 +29,18 @@ h2 {
   font-size: 1.5em;
 }
 
-.App-intro {
-  font-size: large;
-}
 
-.tile-content {
-  padding: 10px;
-}
 
-.tile-title {
-  font-size: 1rem;
-  font-weight: bold;
-}
 
-.item-title {
-  padding-top: 10px;
-}
+
+
+
+
 
 .item-image {
   max-height: 120px;
   width: 180px;
+
 }
 
 .tile:hover {
@@ -85,9 +77,7 @@ h2 {
   align-items: center;
 }
 
-.item-row {
 
-}
 
 .item-row:hover {
   background-color: #f7f7f7;
@@ -122,10 +112,10 @@ h2 {
 	top:80px;
 }
 .box {
-	width:70%;
-	height:200px;
+
+	height:120px;
 	background:#FFF;
-	margin:40px auto;
+	margin:15px auto;
   border: 1px solid #fff;
 }
 /*==================================================
@@ -186,5 +176,19 @@ h2 {
 }
 
 input {
-    text-align: center; 
+    text-align: center;
+}
+
+.navbar {
+  background: grey;
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+  margin-bottom: 25px;
+}
+
+.navbar navbar-section {
+  align-self: center;
+}
+
+.navbar-section {
+  align-items: center;
 }
