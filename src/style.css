@@ -93,6 +93,16 @@ h2 {
   background-color: #f7f7f7;
 }
 
+.items-quantity {
+  width: 40px;
+  display: inline;
+}
+
+.option-cell {
+  width: 45px;
+  text-align: center;
+}
+
 .font-price {
   color: red;
   font-size: .75rem;
@@ -186,5 +196,5 @@ h2 {
 }
 
 input {
-    text-align: center; 
+    text-align: center;
 }
