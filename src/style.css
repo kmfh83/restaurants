@@ -213,6 +213,10 @@ input {
   background: red;
 }
 
+.btn-withe-price {
+  display: none;
+}
+
 @media(max-width:767px){ /* phone and tablet */
   .flex-container {
     display: inline-block;
@@ -269,10 +273,19 @@ input {
   .btn-add-edit {
     width: 95%;
     margin: 5px;
+  }
 
+  .price {
+    display: none;
+  }
 
+  .btn-withe-price {
+    display: block;
+    color: red;
+  }
 
-
+  .btn {
+    display: none;
   }
 
 

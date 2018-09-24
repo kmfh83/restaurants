@@ -83,14 +83,22 @@ itemCountRows (itemsCount) {
           <div className="flex-container-col item-details border-line-3px ">
           <h2>{item.title}</h2>
           <div className="font-description">{item.description}</div>
-          {/* <div className="font-price">{item.price}</div> */}
+          <div className="price font-price">{item.price}</div>
           </div>
           <div className="flex-container-col">
+
+          {/* btn withe price for xs screen */}
           <button
-          className="btn font-price btn-lg btn-add-edit perfect-centering"
+          className="btn-withe-price btn-lg btn-add-edit perfect-centering"
           onClick={() => this.handleAddITem(item)}
           >{item.price} S.R. add</button>
+
+          <button
+          className="btn btn-lg btn-add-edit perfect-centering"
+          onClick={() => this.handleAddITem(item)}
+          >add</button>
           </div>
+
 
 
           <div className={`modal ${modalState}`} id="modal-id">
