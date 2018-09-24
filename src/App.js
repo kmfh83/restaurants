@@ -17,7 +17,7 @@ class App extends Component {
         </header>
         <div className="container">
           <div className="columns">
-            <div className="column col-sm-12 col-md-11 col-lg-9 col-xl-8 col-6 col-mx-auto">
+            <div className="column col-xs-12 col-sm-12 col-md-11 col-lg-9 col-xl-8 col-6 col-mx-auto">
               <Item />
             </div>
           </div>
