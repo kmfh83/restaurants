@@ -39,9 +39,7 @@ h2 {
 
 .item-image {
   max-height: 120px;
-  height: auto;
-  width: 100%;
-
+  width: 180px;
 }
 
 .tile:hover {
@@ -287,6 +285,5 @@ input {
   .flex-container-col .btn {
     display: none;
   }
-
 
 }
