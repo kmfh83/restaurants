@@ -40,7 +40,6 @@ h2 {
 .item-image {
   max-height: 120px;
   width: 180px;
-
 }
 
 .tile:hover {
@@ -81,6 +80,16 @@ h2 {
 
 .item-row:hover {
   background-color: #f7f7f7;
+}
+
+.items-quantity {
+  width: 40px;
+  display: inline;
+}
+
+.option-cell {
+  width: 45px;
+  text-align: center;
 }
 
 .font-price {
@@ -196,7 +205,85 @@ input {
   border: 1px solid #f3f3f3;
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.bgred {
+  background: red;
+}
+
+.btn-withe-price {
+  display: none;
+}
+
+@media(max-width:767px){ /* phone and tablet */
+  .flex-container {
+    display: inline-block;
+    /* flex-direction: row; */
+    /* float: inherit; */
+  }
+    .flex-container > div {
+      /* background-color: #f1f1f1; */
+      width: auto;
+      text-align: center;
+      justify-content: center;
+      align-content: center;
+      line-height: 1.2rem;
+
+    }
+
+  .item-image {
+    height: auto;
+    max-height: 180px;
+    width: 100%;
+
+  }
+
+  .box {
+    align-items: center;
+  	height:auto;
+    width: 100%;
+  	background:#FFF;
+  	margin:5px auto;
+    border: 1px solid #fff;
+    justify-content: center;
+  }
+
+  .font-title {
+    font-size: 60px;
+    color: black;
+    margin-top: 10px;
+  }
 
 
+  h2 {
+    font-size: 1.1rem;
+    padding-top:10px;
+  }
+
+  .font-description {
+    padding-top: 5px;
+  }
+
+  .flex-container-col {
+    align-items: center;
+  }
+
+  .btn-add-edit {
+    width: 95%;
+    margin: 5px;
+  }
+
+  .price {
+    display: none;
+  }
+
+  .btn-withe-price {
+    display: block;
+    color: red;
+  }
+
+  .flex-container-col .btn {
+    display: none;
+  }
 
 }

@@ -4,8 +4,7 @@ const items = [ {
             price: 180,
             description: 'Sweet, tender crabmeat in our creamy garlic Parmesan sauce.',
             image: require('./img/sandwitch.jpg'),
-            options: [ 'shata', 'oil', 'filfil', 'lemon', 'fromage' ]
-
+            options: [ 'shata', 'oil', 'filfil aswad', 'lemon asfar sada', 'fromage' ]
           },
           {
             id: 2,
@@ -22,7 +21,7 @@ const items = [ {
             price: 33.50,
             description: 'Occasionally, this may mean some items listed here are temporarily.',
             image: require('./img/sandwitch.jpg'),
-            options: [ 'shata', 'oil', 'filfil', 'lemon', 'fromage' ]
+            options: [ 'ketchup', 'oil', 'lemon' ]
 
           },
           {
@@ -31,7 +30,7 @@ const items = [ {
             price: 5.50,
             description: 'Two southern fried chicken strips on honey mustard-dressed lettuce leaves with celery sticks and a pot of Red French dressing',
             image: require('./img/sandwitch.jpg'),
-            options: [ 'shata', 'oil', 'filfil', 'lemon', 'fromage' ]
+            options: [ 'cheese', 'pepper', 'filfil' ]
 
           },
           {
@@ -41,8 +40,6 @@ const items = [ {
             description: 'Crispy coated chicken strips, baby gem lettuce, Grana Padano and Caesar dressing in a flour tortilla.',
             image: require('./img/sandwitch.jpg'),
             options: [ 'shata', 'oil', 'filfil', 'lemon', 'fromage' ]
-
-
           }]
 
 export default items;
