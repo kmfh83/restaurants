@@ -20,10 +20,9 @@ class App extends Component {
     return (
       <div className="App">
 
-        {/* TODO kmfh: make this a separate <Header> component*/}
-        <header className="navbar">
+         <header className="navbar">
           <Header />
-        </header>
+         </header>
 
         <div className="container">
           <div className="columns">
