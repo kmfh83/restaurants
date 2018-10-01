@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Item from './components/Item';
 import itemsMock from './data';
+import Header from './components/Header';
 
 const itemCSSclasses = "column col-xs-12 col-sm-12 col-md-11 col-lg-9 col-xl-8 col-6 col-mx-auto";
 
@@ -55,14 +56,9 @@ class App extends Component {
     return (
       <div className="App">
 
-        {/* TODO kmfh: make this a separate <Header> component*/}
-        <header className="navbar">
-          <section className="navbar-section">
-            <a href="/" className="btn btn-link">Home</a>
-            <a href="/" className="btn btn-link">Login</a>
-            <a href="/" className="btn btn-link">About</a>
-          </section>
-        </header>
+         <header className="navbar">
+          <Header />
+         </header>
 
         <div className="container">
           <div className="columns">
