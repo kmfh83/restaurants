@@ -7,12 +7,7 @@ const currentItemOption = [];
 class ItemModal extends Component {
 
   state = {
-    quantity: 0,
-    qq: [],
-    savedItems:  [
-      { item1: [ "sauce1", "sauce4", "grilled"] },
-      { item2: [ "sauce1", "sauce4", "grilled"] },
-    ]
+    quantity: 0
   }
 
   updateQuantity = (value) => {
@@ -24,62 +19,72 @@ class ItemModal extends Component {
     } else {
       console.log('Error value');
     }
-    this.setState({ quantity, qq: new Array(quantity) })
-    // const currentQuantity = this.state.quantity;
-    // if (value === "+1") {
-    //   this.setState(({ quantity }) => ({ quantity: quantity + 1 }));
-    // } else if (value === "-1" && currentQuantity > 0) {
-    //   this.setState(({ quantity }) => ({ quantity: quantity - 1 }));
-    // } else {
-    //   console.log('Error value');
-    // }
-  }
-
-  itemCountRows = () => {
-
+    this.setState({ quantity })
   }
 
   handleSaveItem = () => {
     console.log('handleSaveItem');
   }
 
-  getOptionsChecks = (number) => {
+  handleClickedCheckbox = (e, i, option) => {
+    if (e.target.checked) {
+      // add to state.cart: [ { itemID: { orders: [{},{},{}] }} ]
+      console.log(`added ${option} to sandwitch #${i}`);
+      this.props.updateCart(this.props.id, i, option);
+    } else {
+      console.log(`removed ${option} from sandwitch #${i}`);
+    }
+  }
+
+  getCheckedStatus = (index, option) => {
+    const selected = this.props.orders[index] ? this.props.orders[index].optionalOptions.includes(option) : false;
+    return selected
+  }
+
+  getOptionsCheckboxes = (number) => {
     let rows = [];
     for (let i = 0; i < number; i++) {
-      let tr = (<tr key={i} className={i % 2 ? 'active' : ''}>
-        <td className="option-cell">{i+1}</td>
-        {this.props.options.map(option => (
-          <td key={option} className="option-cell">
-            <input type="checkbox"/>
-            <i className="form-icon"></i>
-          </td>
-        ))}
-      </tr>);
-
-      rows.push(tr);
-    }
-    if (rows.length > 1) {
-      rows.push(
-        <tr>
-          <td className="option-cell">All</td>
-          {this.props.options.map(option => (
+      let tr = (
+        <tr key={i} className={i % 2 ? 'active' : ''}>
+          <td className="option-cell">{i+1}</td>
+          {this.props.options.map((option, index) => (
             <td key={option} className="option-cell">
-              <input type="checkbox" onChange={e => console.log('sss', e)}/>
+              <input type="checkbox"
+                defaultChecked={this.getCheckedStatus(i, option)}
+                onClick={e => this.handleClickedCheckbox(e, i, option)}
+              />
               <i className="form-icon"></i>
             </td>
           ))}
         </tr>
       );
 
+      rows.push(tr);
     }
-    return <tbody>{rows}</tbody>;
+    // if it's more than 2 rows, add "select All" row at the end
+    if (rows.length > 1) {
+      rows.push(
+        <tr key="last">
+          <td className="option-cell">All</td>
+          {this.props.options.map(option => (
+            <td key={option} className="option-cell">
+              <input type="checkbox" onChange={e => console.log('Select all', option)}/>
+              <i className="form-icon"></i>
+            </td>
+          ))}
+        </tr>
+      );
+    }
 
+    return <tbody>{rows}</tbody>;
   }
+
+  componentDidMount = () => this.setState({ quantity: this.props.orders.length || 0 });
 
   render () {
     const { quantity } = this.state;
-    const { close, title, options } = this.props;
-
+    const { close, title, options, orders } = this.props;
+    console.log('my orders', orders);
     return (
 
       <div className="modal active" id="modal-id">
@@ -94,24 +99,18 @@ class ItemModal extends Component {
           />
 
           <div className="modal-body">
-            <div className="content">
-              <form>
-                <div className="form-group">
-                  <div className="columns">
-                    <table className="table table-striped table-hover">
-                      <thead>
-                        <tr>
-                          <th className="option-cell">#</th>
-                          {options.map(option => (
-                            <th key={option} className="option-cell">{option}</th>
-                          ))}
-                        </tr>
-                      </thead>
-                      {this.getOptionsChecks(quantity)}
-                    </table>
-                  </div>
-                </div>
-              </form>
+            <div className="form-group">
+              <table className="table table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th className="option-cell">#</th>
+                    {options.map(option => (
+                      <th key={option} className="option-cell">{option}</th>
+                    ))}
+                  </tr>
+                </thead>
+                {this.getOptionsCheckboxes(quantity)}
+              </table>
             </div>
           </div>
 

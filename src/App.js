@@ -8,10 +8,46 @@ class App extends Component {
   state = {
     menu: itemsMock || [],
     cart: [
-      { itemId: 3, options: [ "filfil", "shata" ] },
-      { itemId: 3, options: [ "shata" ] },
-      { itemId: 5, options: [ "cheese", "shata", "extra meat" ] }
+      { itemId: 1,
+        orders: [
+          {
+            // mainOptions: [],
+            optionalOptions: ['shata', 'oil', 'filfil aswad']
+          },
+          {
+            // mainOptions: [],
+            optionalOptions: ['filfil aswad', 'lemon asfar', 'sada', 'fromage']
+          },
+          {
+            // mainOptions: [],
+            optionalOptions: ['shata', 'oil', 'filfil aswad']
+          },
+        ]
+      }, // item 1
+      { itemId: 2,
+        orders: [
+          {
+            // mainOptions: [],
+            optionalOptions: ['fromage']
+          },
+          {
+            // mainOptions: [],
+            optionalOptions: ['shata']
+          },
+        ]
+      }, // item 2
+
     ]
+  }
+
+  // function to update cart
+  updateCart = (itemId, index, option) => {
+
+  }
+
+  itemOrders = (itemId) => {
+    const found = this.state.cart.find(order => order.itemId === itemId);
+    return found ? found.orders : {};
   }
 
   render() {
@@ -31,7 +67,7 @@ class App extends Component {
         <div className="container">
           <div className="columns">
             <div className={itemCSSclasses}>
-              {this.state.menu.map(item => <Item key={item.id} {...item} />)}
+              {this.state.menu.map(item => <Item key={item.id} {...item} updateCart={this.updateCart} orders={this.itemOrders(item.id)}/>)}
             </div>
           </div>
         </div>

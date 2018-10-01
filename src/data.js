@@ -6,7 +6,7 @@ const items = [ {
             price: 180,
             description: 'Sweet, tender crabmeat in our creamy garlic Parmesan sauce.',
             image: image,
-            options: [ 'shata', 'oil', 'filfil aswad', 'lemon asfar sada', 'fromage' ]
+            options: [ 'shata', 'oil', 'filfil aswad', 'lemon asfar', 'sada', 'fromage' ]
           },
           {
             id: 2,
@@ -14,7 +14,7 @@ const items = [ {
             price: 95,
             description: 'Our menu changes frequently so that our chefs may bring you the BEST.',
             image: image,
-            options: [ 'shata', 'fromage' ]
+            options: [ 'shata', 'fromage', 'batta' ]
 
           },
           {
